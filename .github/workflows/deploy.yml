@@ -30,7 +30,7 @@ jobs:
           fi
 
       - name: Run Bot
-        timeout-minutes: 300
+        timeout-minutes: 2300
         run: |
           echo "=== STARTING BOT AT $(date) ==="
 
@@ -76,8 +76,8 @@ jobs:
       - name: Auto Re-trigger
         if: always()
         run: |
-          echo "Scheduling workflow restart in 60 seconds..."
-          sleep 60
+          echo "Scheduling workflow restart in 30 seconds..."
+          sleep 30
 
           curl -X POST \
             -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
